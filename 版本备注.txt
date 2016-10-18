@@ -1,0 +1,15 @@
+20161017
+	第一版
+	要用string类型，必须加入 iostream 和 string 两个头文件，而且 .h 文件中也要 using namespace
+20161018
+	在 .h 文件中申明全局变量、全局类，以及类的方法名。
+	在 .cpp 文件中写类中声明的方法，以及其他方法的详细信息。
+	.h 文件必须按照如下格式进行，否则可能导致 .h 文件被多次引用，出现 multiple definition 错误。
+		#ifndef Name_HEADER
+		#define Name_HEADER
+		其他内容
+		#endif // Name_HEADER
+	不能像java一样写this.x = x，应该写
+		ClassName *p = this;
+		p -> x = x;
+		(好像可以写成this -> x = x;)
