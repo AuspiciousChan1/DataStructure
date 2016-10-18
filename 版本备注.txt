@@ -13,3 +13,16 @@
 		ClassName *p = this;
 		p -> x = x;
 		(好像可以写成this -> x = x;)
+	判断string是否为空
+		string.empty();
+	抛出异常用throw，可以在函数中抛出，抛出什么类型都可以。还可以在函数名后面写抛出什么类型可以被try-catch抓住，不写类型就是不限制抛出类型
+		#include <stdexcept>
+		void func() throw(int, exception){
+			throw out_of_range("超出范围");
+		}
+		（另一处）
+		try{}
+		catch(out_of_range &e){
+			cout<<"Error:"<<e.what()<<endl;
+		}
+		
