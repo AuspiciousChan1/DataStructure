@@ -32,8 +32,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Constant.cpp" />
+		<Unit filename="Constant.h" />
+		<Unit filename="MyException.h" />
 		<Unit filename="SingleLinkedList.cpp" />
 		<Unit filename="SingleLinkedList.h" />
+		<Unit filename="Stack.cpp" />
+		<Unit filename="Stack.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

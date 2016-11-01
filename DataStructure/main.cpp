@@ -1,8 +1,5 @@
-#ifndef _SingleLinkedList_HEADER
-#define _SingleLinkedList_HEADER
 #include "SingleLinkedList.h"
-#endif
-
+#include "Stack.h"
 #include <iostream>
 #include <stdexcept>
 #include <cstdio>
@@ -11,25 +8,23 @@ using namespace std;
 
 int main()
 {
-    SingleLinkedList *sLList = new SingleLinkedList("test");
-
-    sLList -> addElemToEnd("1");
-    sLList -> addElemToEnd("2");
-    sLList -> addElemToEnd("3");
-    sLList -> addElemToEnd("4");
-    sLList -> addElemToEnd("5");
-    cout << sLList -> getElem(4)<<endl;
     try{
-        cout << sLList -> getElem(-1)<<endl;
+        SingleLinkedList *sLList = new SingleLinkedList("test");
+        Stack *myStack = new Stack("Test");
+        char buffer[100];
+        for(int i = 0; i <100; i++){
+            sprintf(buffer, "%d", i);
+            cout<<"push£º"<<myStack->push(buffer)<<endl;
+        }
+        cout<<"pop£º"<<myStack->pop()<<endl;
+        myStack->destroyStack();
+        myStack->clearStack();
     }
-    catch(out_of_range &e){
-        cout<<"Error:"<<e.what()<<endl;
+    catch(out_of_range &ofr){
+        cout<<"Error:"<<ofr.what()<<endl;
     }
-    try{
-        cout << sLList -> getElem(6)<<endl;
-    }
-    catch(out_of_range &e){
-        cout<<"Error:"<<e.what()<<endl;
+    catch(logic_error &le){
+        cout<<"Error:"<<le.what()<<endl;
     }
     return 0;
 }

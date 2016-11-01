@@ -15,7 +15,7 @@
 		(好像可以写成this -> x = x;)
 	判断string是否为空
 		string.empty();
-	抛出异常用throw，可以在函数中抛出，抛出什么类型都可以。还可以在函数名后面写抛出什么类型可以被try-catch抓住，不写类型就是不限制抛出类型
+	抛出异常用throw，可以在函数中抛出，抛出什么类型都可以。还可以在函数名后面写抛出什么类型可以被try-catch抓住，不写类型就是不能抛出异常，默认为可以抛出任何异常
 		#include <stdexcept>
 		void func() throw(int, exception){
 			throw out_of_range("超出范围");
@@ -25,4 +25,14 @@
 		catch(out_of_range &e){
 			cout<<"Error:"<<e.what()<<endl;
 		}
-		
+20161020
+	用nullptr代替NULL出错
+		error: ‘nullptr’ was not declared in this scope
+		解决方案：编译器里敲入命令行-std=gnu++0x
+			Code::Blocks集成了GNU GCC编译器，所以 菜单栏->Setting->compiler…，选择Global compiler settings页面，页面上部selected compiler选择GNU GCC Comiler，然后页面选择中部选择Compiler settings->Compiler Flags，勾选Have g++ follow the coming C++0x ISO C++ language standard [-std=gnu++0x]，
+20161101
+	不知道怎么删除头结点 (this = nullptr非法)
+	不知从其他类直接调用数据的方法（Constant的使用）
+	初步完成了栈的进出功能。
+	length，getTop等功能还没写。
+					
