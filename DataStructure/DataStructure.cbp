@@ -34,7 +34,10 @@
 		</Compiler>
 		<Unit filename="Constant.cpp" />
 		<Unit filename="Constant.h" />
-		<Unit filename="MyException.h" />
+		<Unit filename="LinkedQueue.cpp" />
+		<Unit filename="LinkedQueue.h" />
+		<Unit filename="MyFunction.cpp" />
+		<Unit filename="MyFunction.h" />
 		<Unit filename="SingleLinkedList.cpp" />
 		<Unit filename="SingleLinkedList.h" />
 		<Unit filename="Stack.cpp" />

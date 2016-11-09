@@ -1,15 +1,22 @@
 #include "Stack.h"
-#include "Constant.h"
 #include <string>
 #include <stdexcept>
 
 
 Stack::Stack(string data){
-    this->data = data;
-    this->next = nullptr;
+    if(data != "")
+    {
+        this->data = data;
+        this->next = nullptr;
+    }
+    else
+    {
+        throw out_of_range("栈名不能为空！");
+    }
 }
 
 Stack::~Stack(){
+    //cout<<"ClearStack："<<data<<endl;
     data = "";
     next= nullptr;
 }
@@ -18,7 +25,8 @@ Stack::~Stack(){
 void Stack::destroyStack(){
     if(this != nullptr){
         Stack *p = this;
-        Stack *q = p;
+        Stack *q = nullptr;
+        q = p;
         while(p->next != nullptr){
             q = p->next;
             p->next = nullptr;
@@ -29,11 +37,9 @@ void Stack::destroyStack(){
     }
     else{
     }
-    this->next = nullptr;
-    delete this;
 }
 
-void Stack::clearStack()throw(exception){
+bool Stack::clearStack(){
     if(!(this->next == nullptr && this->data == "")){
         Stack *p = this->next;
         Stack *q = p;
@@ -44,43 +50,69 @@ void Stack::clearStack()throw(exception){
         }
         delete p;
         this->next = nullptr;
+        return true;
     }
     else{
+        return false;
+    }
+}
+
+bool Stack::isStackEmpty() throw(exception){
+    if(this->data != "")
+    {
+        return this->next == nullptr;
+    }
+    else
+    {
+        throw logic_error("栈不存在，无法定义空！");
+    }
+}
+
+int Stack::getLength() throw(exception){
+    if(this->data != "")
+    {
+        Stack *p = this;
+        int n = 0;
+        while(p->next != nullptr){
+            n++;
+            p = p->next;
+        }
+        return n;
+    }
+    else
+    {
         throw logic_error("栈不存在");
     }
 }
 
-bool Stack::isStackEmpty(){
-    return this->next == nullptr;
-}
+string Stack::push(string data) throw(exception){
 
-int Stack::stackEmpty(){
-    Stack *p = this;
-    int n = 0;
-    while(p->next != nullptr){
-        n++;
-        p = p->next;
+    if(this->data != "")
+    {
+        Stack *node = new Stack(data);
+        if(this->next == nullptr){
+            this->next = node;
+        }
+        else{
+            Stack *p = this->next;
+            node->next = p;
+            this->next = node;
+        }
+        return data;
     }
-    return n;
-}
-
-//尚未考虑this为空指针的情况
-string Stack::push(string data){
-    Stack *node = new Stack(data);
-    if(this->next == nullptr){
-        this->next = node;
+    else
+    {
+        throw logic_error("栈不存在，无法推元素入栈！");
     }
-    else{
-        Stack *p = this->next;
-        node->next = p;
-        this->next = node;
-    }
-    return data;
 }
 
 string Stack::pop() throw(exception){
-    if(this->next == nullptr){
-        throw out_of_range("栈为空");
+    if(this->data == "")
+    {
+        throw logic_error("栈不存在，出栈失败！");
+    }
+    else if(this->next == nullptr){
+        throw length_error("栈为空，无可出栈元素！");
     }
     else{
         Stack *p = this->next;
@@ -90,3 +122,37 @@ string Stack::pop() throw(exception){
         return str;
     }
 }
+
+string Stack::getName() throw(exception)
+{
+    if(this->data != "")
+    {
+        return this->data;
+    }
+    else
+    {
+        throw logic_error("栈不存在");
+    }
+}
+
+string Stack::getTop() throw(exception)
+{
+    if(this->data != "")
+    {
+        if(this->next != nullptr)
+        {
+            return this->next->data;
+        }
+        else
+        {
+            throw length_error("栈为空，栈顶无元素！");
+        }
+    }
+    else
+    {
+        throw logic_error("栈不存在");
+    }
+}
+
+//留底
+

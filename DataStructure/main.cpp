@@ -1,30 +1,59 @@
 #include "SingleLinkedList.h"
 #include "Stack.h"
+#include "LinkedQueue.h"
+#include "MyFunction.h"
+#include "Constant.h"
+#include "MyFunction.h"
 #include <iostream>
 #include <stdexcept>
 #include <cstdio>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
 int main()
 {
-    try{
-        SingleLinkedList *sLList = new SingleLinkedList("test");
-        Stack *myStack = new Stack("Test");
-        char buffer[100];
-        for(int i = 0; i <100; i++){
-            sprintf(buffer, "%d", i);
-            cout<<"push£º"<<myStack->push(buffer)<<endl;
+    Constant *constant = new Constant();
+    MyFunction myFunction;
+    try
+    {
+        stringstream sstream;
+        string str = "";
+        Stack *myStack = new Stack(constant->getStackName());
+        LinkedQueue *lQueue =  new LinkedQueue(constant->getLinkedQueueName());
+        for(int i = 0; i < 50; i++)
+        {
+            sstream.clear();
+            sstream << i;
+            sstream >> str;
+            myStack->push(str);
+            lQueue->enQueue(str);
         }
-        cout<<"pop£º"<<myStack->pop()<<endl;
-        myStack->destroyStack();
-        myStack->clearStack();
+        if(myStack->clearStack())
+        {
+            cout<<"true"<<endl;
+        }
+        else
+        {
+            cout<<"false"<<endl;
+        }
+        cout<<myStack->getTop()<<endl;
+        cout<<myStack->pop()<<endl;
+        cout<<myStack->pop()<<endl;
+        cout<<myStack->getTop()<<endl;
     }
-    catch(out_of_range &ofr){
-        cout<<"Error:"<<ofr.what()<<endl;
+    catch(length_error &le)
+    {
+        myFunction.myPrintf("length_error:", le.what());
     }
-    catch(logic_error &le){
-        cout<<"Error:"<<le.what()<<endl;
+    catch(out_of_range &ofr)
+    {
+        myFunction.myPrintf("out_of_range:", ofr.what());
+    }
+    catch(logic_error &le)
+    {
+        myFunction.myPrintf("logic_error:", le.what());
     }
     return 0;
 }

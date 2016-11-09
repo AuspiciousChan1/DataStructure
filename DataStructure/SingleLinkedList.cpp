@@ -1,14 +1,7 @@
 #include "SingleLinkedList.h"
-#include <string>
-#include <stdexcept>
 
 using namespace std;
 
-SingleLinkedList::SingleLinkedList()
-{
-    data = "";
-    next = nullptr;
-}
 SingleLinkedList::SingleLinkedList(string data)
 {
     SingleLinkedList *p = this;

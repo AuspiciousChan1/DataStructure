@@ -12,36 +12,59 @@
 1476778613 source:e:\otherworkspace\codeblocksworkspace\datastructure\singlelinkedlist.cpp
 	"SingleLinkedList.h"
 
-1477929098 source:e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\main.cpp
+1478652530 source:e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\main.cpp
 	"SingleLinkedList.h"
 	"Stack.h"
+	"LinkedQueue.h"
+	"MyFunction.h"
+	"Constant.h"
+	"MyFunction.h"
 	<iostream>
 	<stdexcept>
 	<cstdio>
+	<string>
+	<sstream>
 
-1477747871 e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\singlelinkedlist.h
+1478592102 e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\singlelinkedlist.h
+	<string>
+	<stdexcept>
 	<iostream>
 	<cstdlib>
 
-1477748012 source:e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\singlelinkedlist.cpp
+1478592104 source:e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\singlelinkedlist.cpp
 	"SingleLinkedList.h"
-	<string>
-	<stdexcept>
 
-1477929717 source:e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\stack.cpp
+1478651975 source:e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\stack.cpp
 	"Stack.h"
 	<string>
 	<stdexcept>
 
-1477961121 e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\stack.h
+1478651676 e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\stack.h
 	<iostream>
 	<cstdlib>
 
-1477962097 source:e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\constant.cpp
+1478437442 source:e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\constant.cpp
 	"Constant.h"
+
+1478437367 e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\constant.h
 	<iostream>
 	<string>
 
-1477961981 e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\constant.h
+1478597861 source:e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\myfunction.cpp
+	"MyFunction.h"
+
+1478597860 e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\myfunction.h
+	<iostream>
+	<cstdio>
 	<string>
+	<sStream>
+	<typeinfo>
+
+1478651533 source:e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\linkedqueue.cpp
+	"LinkedQueue.h"
+
+1478651118 e:\otherworkspace\codeblocksworkspace\datastructure\datastructure\linkedqueue.h
+	<iostream>
+	<string>
+	<stdexcept>
 

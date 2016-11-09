@@ -1,5 +1,7 @@
 #ifndef SingleLinkedList_HEADER
 #define SingleLinkedList_HEADER
+#include <string>
+#include <stdexcept>
 #include <iostream>
 #include <cstdlib>
 
@@ -11,7 +13,6 @@ private:
     string data;
     SingleLinkedList *next;
 public:
-    SingleLinkedList();
     SingleLinkedList(string data);
     ~SingleLinkedList(){}
 

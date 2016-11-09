@@ -1,9 +1,21 @@
 #include "Constant.h"
-#include <iostream>
-#include <string>
-using namespace std;
 
 Constant::Constant()
 {
-    NullPointer = "\0";
+    this->stackName = "Test";
+    this->linkedQueueName = "Test";
+}
+
+Constant::~Constant()
+{
+    this->stackName = "";
+}
+
+string Constant::getStackName()
+{
+    return this->stackName;
+}
+string Constant::getLinkedQueueName()
+{
+    return this->linkedQueueName;
 }
